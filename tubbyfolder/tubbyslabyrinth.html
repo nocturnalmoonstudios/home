@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubby's Labyrinth - Nocturnal Moon Studios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f0f12;
+            --card-bg: #18181c;
+            --card-border: #2e2e38;
+            --accent-primary: #8b5cf6;
+            --accent-hover: #7c3aed;
+            --accent-glow: rgba(139, 92, 246, 0.3);
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(15, 15, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-primary);
+        }
+
+        .back-btn {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-btn:hover {
+            color: var(--accent-primary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1000px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+            flex-grow: 1;
+        }
+
+        .game-detail-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 3rem;
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .game-info {
+            flex: 1;
+        }
+
+        .game-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+        }
+
+        .title-red {
+            color: #ef4444;
+        }
+
+        .title-white {
+            color: #ffffff;
+        }
+
+        .game-description {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.9rem 1.8rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1rem;
+        }
+
+        .btn-windows {
+            background-color: var(--accent-primary);
+            color: white;
+            box-shadow: 0 4px 20px var(--accent-glow);
+        }
+
+        .btn-windows:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(139, 92, 246, 0.5);
+        }
+
+        .btn-android {
+            background-color: #24242c;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-android:hover {
+            background-color: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .game-icon-container {
+            flex-shrink: 0;
+        }
+
+        .game-icon {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            border: 2px solid var(--card-border);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--card-border);
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .game-detail-card {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 2rem;
+            }
+            .game-icon {
+                width: 160px;
+                height: 160px;
+            }
+            .download-buttons {
+                justify-content: center;
+            }
+            .game-title {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="logo">🌙 Nocturnal Moon <span>Studios</span></a>
+            <a href="index.html" class="back-btn">← Back to Main Page</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="game-detail-card">
+            <!-- Left side: Game Info & Download Buttons -->
+            <div class="game-info">
+                <h1 class="game-title">
+                    <span class="title-red">Tubby's</span> <span class="title-white">Labyrinth</span>
+                </h1>
+                <p class="game-description">
+                    A fun labyrinth game where you have to find the elevator in order to leave, but something is following you.
+                </p>
+                <div class="download-buttons">
+                    <a href="TubbysLabyrinthWindows.zip" download="TubbysLabyrinthWindows.zip" class="download-btn btn-windows">
+                        💻 Download for Windows
+                    </a>
+                    <a href="TubbysLabyrinth.apk" download="TubbysLabyrinth.apk" class="download-btn btn-android">
+                        📱 Download for Android
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right side: Icon -->
+            <div class="game-icon-container">
+                <img src="icon.png" alt="Tubby's Labyrinth Icon" class="game-icon">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Nocturnal Moon Studios. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
