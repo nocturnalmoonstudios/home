@@ -36,7 +36,6 @@
             justify-content: space-between;
         }
 
-        /* Navigation */
         header {
             position: sticky;
             top: 0;
@@ -81,7 +80,6 @@
             color: var(--accent-primary);
         }
 
-        /* Container */
         .container {
             max-width: 1000px;
             margin: 4rem auto;
@@ -170,6 +168,19 @@
             transform: translateY(-2px);
         }
 
+        .btn-demo {
+            background-color: #24242c;
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+        }
+
+        .btn-demo:hover {
+            background-color: #ef4444;
+            border-color: #ef4444;
+            color: white;
+            transform: translateY(-2px);
+        }
+
         .game-icon-container {
             flex-shrink: 0;
         }
@@ -183,7 +194,6 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
         }
 
-        /* Footer */
         footer {
             border-top: 1px solid var(--card-border);
             text-align: center;
@@ -213,7 +223,6 @@
 </head>
 <body>
 
-    <!-- Navigation -->
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">🌙 Nocturnal Moon <span>Studios</span></a>
@@ -221,10 +230,8 @@
         </div>
     </header>
 
-    <!-- Main Content -->
     <main class="container">
         <div class="game-detail-card">
-            <!-- Left side: Game Info & Download Buttons -->
             <div class="game-info">
                 <h1 class="game-title">
                     <span class="title-red">Tubby's</span> <span class="title-white">Labyrinth</span>
@@ -239,17 +246,18 @@
                     <a href="TubbysLabyrinth.apk" download="TubbysLabyrinth.apk" class="download-btn btn-android">
                         📱 Download for Android
                     </a>
+                    <a href="tubbydemo.html" class="download-btn btn-demo">
+                        🌐 Play Online Demo
+                    </a>
                 </div>
             </div>
 
-            <!-- Right side: Icon -->
             <div class="game-icon-container">
                 <img src="icon.png" alt="Tubby's Labyrinth Icon" class="game-icon">
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 Nocturnal Moon Studios. All rights reserved.</p>
     </footer>
